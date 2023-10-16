@@ -1,9 +1,12 @@
-# cache.yaml
-name: Our Workflow
+# jobs.yaml
+name: Our Jobs
 on: push
 jobs:
-  cache:
+  hello1:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - run: npm ci
+      - run: echo 'Hello, GitHub Actions!' > hello.txt
+  hello2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: cat hello.txt
