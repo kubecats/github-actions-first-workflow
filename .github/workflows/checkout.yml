@@ -1,11 +1,9 @@
+# cache.yaml
 name: Our Workflow
 on: push
 jobs:
-  checkout:
+  cache:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          repository: actions/checkout
-          ref: v3
-      - run: ls
+      - run: npm ci
